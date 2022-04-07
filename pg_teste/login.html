@@ -7,13 +7,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link  rel="stylesheet" type="text/css" href="css/index_style.css"></link>
+  <link rel="stylesheet" type="text/css" href="css/login_style.css">
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light row shadow p-3 mb-5 bg-body rounded">
     <div class="container-fluid">
-      <a class="navbar-brand col-3" href="index.html">Navbar</a>
+      <a class="navbar-brand col-2 aline" href="index.html">Navbar</a>
 
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarr" aria-controls="navbarr" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,24 +28,31 @@
         <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
         </li>
        </ul>
-  </div></div></div>
+        <input class="form-control mr-sm-2 col-0" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+      </div>
+      </div>
   </nav>
 
-<blockquote class="blockquote text-center">
-<form>
-  <div class="form-group">
-    <label id="caixa" for="exampleInputEmail1">Endereço de E-mail</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+<div>
+  <div class="block">
+    <form>
+      <div class="form-group">
+        <label id="caixa" for="exampleInputEmail1">Endereço de E-mail</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label id="caixa" for="exampleInputPassword1">Senha</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label id="caixa" class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label id="caixa" for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label id="caixa" class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
-</form></blockquote>
+</div>
 </body>
 </html>

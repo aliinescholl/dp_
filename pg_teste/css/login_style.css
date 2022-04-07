@@ -1,12 +1,11 @@
-* {
-	margin: 0;
-	padding: 0;
+.block {
+	border: 1px solid black;
+	width: 450px;
+	padding: 15px;
+	margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
 }
-
-body{
-	background-color: #e8e8e8;
-}
-
 .nav-item{
 	border-radius: 20px;
 	border: 1px solid black;
@@ -15,13 +14,4 @@ body{
 	margin: 5px;
 	text-align: center;	
 	width: 150px;
-}
-
-
-#caixa{
-	width: 500px;
-	box-sizing: 500px;
-}
-
-.inputs {
 }
