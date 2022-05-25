@@ -5,9 +5,11 @@ $(function() { // quando o documento estiver pronto/carregado
         //pegar dados da tela
         nome = $("#campoNome").val();
         email = $("#campoEmail").val();
-        tel = $("#campoTelefone").val();
+        senha = $("#campoSenha").val();
+        console.log(nome, email, senha);
+
         // preparar dados no formato json
-        var dados = JSON.stringify({ nome: nome, email: email, telefone: tel });
+        var dados = JSON.stringify({ nome: nome, email: email, senha: senha });
         // fazer requisição para o back-end
         $.ajax({
             url: 'http://localhost:5000/incluir_pessoa',
@@ -26,7 +28,7 @@ $(function() { // quando o documento estiver pronto/carregado
                 // limpar os campos
                 $("#campoNome").val("");
                 $("#campoEmail").val("");
-                $("#campoTelefone").val("");
+                $("#campoSenha").val("");
             } else {
                 // informar mensagem de erro
                 alert("ERRO na inclusão: "+retorno.resultado + ":" + retorno.detalhes);
