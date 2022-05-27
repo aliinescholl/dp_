@@ -23,7 +23,7 @@ $(function() { // quando o documento estiver pronto/carregado
         function pessoaIncluida (retorno) {
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
-                alert("Pessoa incluída com sucesso!");
+                alert("Cadastro realizado com sucesso!");
                 //$("#mensagem").text("Pessoa incluída com sucesso!");
                 // limpar os campos
                 $("#campoNome").val("");

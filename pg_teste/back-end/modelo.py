@@ -32,16 +32,13 @@ if __name__ == "__main__":
     # teste da classe Pessoa
     p1 = Pessoa(nome = "João da Silva", email = "josilva@gmail.com", 
         senha = "47 99012 3232")
-    p2 = Pessoa(nome = "Maria Oliveira", email = "molive@gmail.com", 
-        senha = "47 98822 2531")        
-    
+
     # persistir
     db.session.add(p1)
-    db.session.add(p2)
     db.session.commit()
     
     # exibir a pessoa
-    print(p2)
+    print(p1)
 
     # exibir a pessoa no format json
-    print(p2.json())
+    print(p1.json())
