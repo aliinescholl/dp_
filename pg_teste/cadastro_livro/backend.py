@@ -4,7 +4,7 @@ from modelo import Livrinho
 @app.route("/")
 def inicio():
     return 'Sistema de cadastro de pessoas. '+\
-        '<a href="/incluir">Operação incluir pessoa</a>'
+        '<a href="/incluir">Operação incluir Livro</a>'
 
 # teste da rota: curl -d '{"nome":"James Kirk", "telefone":"92212-1212", "email":"jakirk@gmail.com"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_pessoa
 @app.route("/incluir_livro", methods=['post'])
