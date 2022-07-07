@@ -1,4 +1,4 @@
-from config import *
+from configs.config import *
 
 class Livrinho(db.Model):
     # atributos da pessoa

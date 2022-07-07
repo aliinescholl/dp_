@@ -1,4 +1,5 @@
-from config import *
+from configs.config import *
+
 
 class Pessoa(db.Model):
     # atributos da pessoa
@@ -9,9 +10,10 @@ class Pessoa(db.Model):
 
     # método para expressar a pessoa em forma de texto
     def __str__(self):
-        return str(self.id)+") "+ self.nome + ", " +\
+        return str(self.id)+") " + self.nome + ", " +\
             self.email + ", " + self.senha
     # expressao da classe no formato json
+
     def json(self):
         return {
             "id": self.id,
@@ -20,23 +22,18 @@ class Pessoa(db.Model):
             "senha": self.senha
         }
 
-# teste    
-if __name__ == "__main__":
-    # apagar o arquivo, se houver
-    if os.path.exists(arquivobd):
-        os.remove(arquivobd)
+# teste
 
-    # criar tabelas
-    db.create_all()
 
+def testar_pessoa():
     # teste da classe Pessoa
-    p1 = Pessoa(nome = "João da Silva", email = "josilva@gmail.com", 
-        senha = "47 99012 3232")
+    p1 = Pessoa(nome="João da Silva", email="josilva@gmail.com",
+                senha="47 99012 3232")
 
     # persistir
     db.session.add(p1)
     db.session.commit()
-    
+
     # exibir a pessoa
     print(p1)
 

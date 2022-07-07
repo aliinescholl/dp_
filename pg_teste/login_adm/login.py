@@ -1,4 +1,4 @@
-from cadastro_pessoas.config import *
+from configs.config import *
 from cadastro_pessoas.modelo import *
 
 

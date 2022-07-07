@@ -1,4 +1,4 @@
-from config import *
+from configs.config import *
 from modelo import Pessoa
 
 @app.route("/")

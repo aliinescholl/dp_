@@ -1,43 +1,46 @@
-from config import *
+from configs.config import *
+from cadastro_pessoas.modelo import *
 
-class Forum(db.Model):
+
+class Postagem(db.Model):
     # atributos da pessoa
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254))
+    pessoa_id = db.Column(db.Integer, db.ForeignKey(Pessoa.id), nullable=False)
+    pessoa = db.relationship("Pessoa")
     opiniao = db.Column(db.String(254))
     nota = db.Column(db.String(254))
 
     # método para expressar a pessoa em forma de texto
     def __str__(self):
-        return str (self.nome + ", " + self.opiniao + ', ' + self.nota)
+        return str(self.pessoa) + ", " + self.opiniao + ', ' + self.nota
     # expressao da classe no formato json
-    
+
     def json(self):
         return {
             "id": self.id,
-            "nome": self.nome,
+            "pessoa": self.pessoa.json(),
             "opiniao": self.opiniao,
             'nota': self.nota
         }
 
-# teste    
-if __name__ == "__main__":
-    # apagar o arquivo, se houver
-    if os.path.exists(arquivobd):
-        os.remove(arquivobd)
 
-    # criar tabelas
-    db.create_all()
+# teste postagem
 
-    # teste da classe Forum
-    p1 = Forum(nome = "João da Silva", opiniao = "pessimo livro", nota = '5')
+def testar_postagem():
+
+    p1 = Pessoa(nome="João da Silva", email="josilva@gmail.com",
+                senha="47 99012 3232")
+    # teste da classe Postagem
+    p2 = Postagem(pessoa=p1, opiniao="pessimo livro", nota='5')
 
     # persistir
     db.session.add(p1)
+    db.session.add(p2)
+
     db.session.commit()
-    
-    # exibir a opiniao da pessoa
-    print(p1)
+
+    # exibir a opiniao e a pessoa em postagem
+    print(p2)
 
     # exibir a pessoa no format json
-    print(p1.json())
+    print(p2.json())
