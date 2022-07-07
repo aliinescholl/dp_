@@ -1,5 +1,6 @@
 from configs.config import *
-from modelo import Forum
+from postagem.modelo import Postagem
+
 
 @app.route("/")
 def inicio():
@@ -16,7 +17,7 @@ def incluir_forum():
     # receber as informações da nova pessoa
     dados = request.get_json()  # (force=True) dispensa Content-Type na requisição
     try:  # tentar executar a operação
-        nova = Forum(**dados)  # criar a nova pessoa
+        nova = Postagem(**dados)  # criar a nova pessoa
         db.session.add(nova)  # adicionar no BD
         db.session.commit()  # efetivar a operação de gravação
     except Exception as e:  # em caso de erro...

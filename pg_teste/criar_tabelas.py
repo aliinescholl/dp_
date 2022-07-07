@@ -2,7 +2,7 @@ from configs.config import *
 
 from cadastro_livro.modelo import *
 from cadastro_pessoas.modelo import *
-from forum.modelo import *
+from postagem.modelo import *
 
 if os.path.exists(arquivobd):
     os.remove(arquivobd)

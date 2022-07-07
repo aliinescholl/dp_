@@ -1,5 +1,5 @@
 from configs.config import *
-from forum.backend import *
+from postagem.backend import *
 from cadastro_livro.backend import *
 from cadastro_pessoas.backend import *
 from login_adm.login import *
