@@ -3,6 +3,7 @@ from postagem.backend import *
 from cadastro_livro.backend import *
 from cadastro_pessoas.backend import *
 from login_adm.login import *
+from login_pessoa.login import *
 
 @app.route("/")
 def inicio():

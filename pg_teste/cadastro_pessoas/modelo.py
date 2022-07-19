@@ -6,7 +6,7 @@ class Pessoa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254))
     email = db.Column(db.String(254))
-    senha = db.Column(db.String(254))
+    senha = db.Column(db.Text)
 
     # método para expressar a pessoa em forma de texto
     def __str__(self):
