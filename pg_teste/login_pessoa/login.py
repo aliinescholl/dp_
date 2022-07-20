@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../../')
-import config
 from configs.config import *
 from configs.criptografia import *
 from cadastro_pessoas.modelo import *

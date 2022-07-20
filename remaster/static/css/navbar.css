@@ -5,17 +5,16 @@
 	margin: 5px;
 	text-align: center;	
 	width: 150px;
-	color: #cefffc;
+	color: #cefffc !important;
 }
-li{
-	color: #cefffc;
-}
+
 .nav-item:hover{
 	background-color: #cefffc;
-	color: #122437;
+	color: #122437 !important;
 	transition: 0.5s;
 	box-shadow: 0 0 20px #fff,0 0 20px #fff;
 }
+
 .navbar{
 	background-color: #122437;
 }

@@ -27,7 +27,7 @@ class Pessoa(db.Model):
 def testar_pessoa():
     # teste da classe Pessoa
     p1 = Pessoa(nome="João da Silva", email="josilva@gmail.com",
-                senha="47 99012 3232")
+                senha="1234567")
 
     # persistir
     db.session.add(p1)
