@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #e8e8e8;
+}
+
+.nav-item{
+	border-radius: 20px;
+	border: 1px solid black;
+	background-color: #99caff;
+	font-weight: bolder;
+	margin: 5px;
+	text-align: center;	
+	width: 150px;
+}
+
+
+#caixa{
+	width: 500px;
+	box-sizing: 500px;
+}
+
+.inputs {
+}
+.botao{
+	position: right
+}
