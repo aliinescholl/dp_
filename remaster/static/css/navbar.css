@@ -1,23 +1,26 @@
 .nav-item{
-	border-radius: 2px;
+	border-radius: 5px;
 	background-color: #122437;
 	font-weight: bolder;
 	margin: 5px;
 	text-align: center;	
 	width: 150px;
+	color: #cefffc;
+}
+li{
+	color: #cefffc;
+}
+.nav-item:hover{
+	background-color: #cefffc;
+	color: #122437;
+	transition: 0.5s;
+	box-shadow: 0 0 20px #fff,0 0 20px #fff;
 }
 .navbar{
 	background-color: #122437;
 }
-.text-title{
-	color: white;
-}
 
-#caixa{
+.caixa{
 	width: 500px;
 	box-sizing: 500px;
-}
-
-.botao{
-	position: right
 }
