@@ -21,20 +21,11 @@ class Pessoa(db.Model):
             "senha": self.senha
         }
 
-# teste
+def pegar_email_no_bd(email_bd:str):
+    return Pessoa.query.get(email_bd)
 
-
-def testar_pessoa():
-    # teste da classe Pessoa
-    p1 = Pessoa(nome="João da Silva", email="josilva@gmail.com",
-                senha="1234567")
-
-    # persistir
-    db.session.add(p1)
-    db.session.commit()
-
-    # exibir a pessoa
-    print(p1)
-
-    # exibir a pessoa no format json
-    print(p1.json())
+def ver_senha_no_bd(email_bd:str, senha:str):
+    for q in db.session.query(Pessoa.senha).filter(Pessoa.email_bd).all:
+        if q == None:
+            return False
+        return 

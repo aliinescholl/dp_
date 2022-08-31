@@ -3,8 +3,7 @@ from modelo import Pessoa
 
 @app.route("/")
 def inicio():
-    return 'Sistema de cadastro de pessoas. '+\
-        '<a href="/incluir_pessoa">Operação incluir pessoa</a>'
+    return render_template("index.html")
 
 # teste da rota: curl -d '{"nome":"James Kirk", "telefone":"92212-1212", "email":"jakirk@gmail.com"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_pessoa
 @app.route("/incluir_pessoa", methods=['post'])
@@ -27,11 +26,13 @@ def incluir_pessoa():
 
 @app.route("/fazer_login", methods=['post'])
 def fazer_login():
-  dados = request.get_json()
-  print('blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+  dados = request.get_json(force=True)
+  email = str(dados['email'])
+  senha = str(dados['senha'])
   print(dados)
-  resposta = jsonify({"resultado":"erro", "detalhes":str()})
 
+  resposta = jsonify("login realizado")
+  
   resposta.headers.add("Access-Control-Allow-Origin", "*")
   return resposta # responder!
 

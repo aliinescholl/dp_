@@ -42,16 +42,14 @@ $(function() { // quando o documento estiver pronto/carregado
 });
 $(function() { // quando o documento estiver pronto/carregado
     
-    // código para mapear click do botão incluir pessoa
+    // código para mapear click do botão
     $(document).on("click", "#btnFazerLogin", function() {
-        //pegar dados da tela
+        //recebe os dados da tela
         email = $("#campoEmail").val();
         senha = $("#campoSenha").val();
-        console.log(email, senha);
+        console.log(email, senha); //mostra no console
 
-        // preparar dados no formato json
-        var dados = JSON.stringify({ email: email, senha: senha });
-        // fazer requisição para o back-end
+        var dados = JSON.stringify({ email: email, senha: senha });//compila os dados todos juntos em json
         $.ajax({
             url: 'http://localhost:5000/fazer_login',
             type: 'POST',
@@ -65,13 +63,12 @@ $(function() { // quando o documento estiver pronto/carregado
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
                 alert("Login realizado com sucesso!");
-                //$("#mensagem").text("Pessoa incluída com sucesso!");
                 // limpar os campos
                 $("#campoEmail").val("");
                 $("#campoSenha").val("");
             } else {
                 // informar mensagem de erro
-                alert("ERRO na inclusão: "+retorno.resultado + ":" + retorno.detalhes);
+                alert("ERRO no login: "+retorno.resultado + ":" + retorno.detalhes);
             }            
         }
         function erroaoLogar (retorno) {
