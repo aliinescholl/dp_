@@ -6,18 +6,20 @@ class Livrinho(db.Model):
     titulo = db.Column(db.String(254))
     descricao = db.Column(db.String(254))
     autor = db.Column(db.String(254))
+    nome_foto = db.Column(db.Text)
 
     # método para expressar a pessoa em forma de texto
     def __str__(self):
         return str(self.id)+") "+ self.titulo + ", " +\
-            self.descricao + ", " + self.autor
+            self.descricao + ", " + self.autor + ", " + self.nome_foto
     # expressao da classe no formato json
     def json(self):
         return {
             "id": self.id,
             "titulo": self.titulo,
             "descricao": self.descricao,
-            "autor": self.autor
+            "autor": self.autor,
+            "nom_foto": self.nome_foto
         }
 
 # teste    

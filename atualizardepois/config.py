@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, session
+from flask import Flask, jsonify, request, session, send_file
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -9,7 +9,6 @@ from flask_cors import CORS # permitir back receber json do front
 app = Flask(__name__)
 meuservidor = "http://localhost:8080"
 CORS(app) # aplicar o cross domain
-caminho = os.path.dirname(os.path.abspath(__file__)) 
 # caminho do arquivo de banco de dados
 path = os.path.dirname(os.path.abspath(__file__)) 
 arquivobd = os.path.join(path, 'pessoas.db')
