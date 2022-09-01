@@ -31,7 +31,7 @@ $(function() { // quando o documento estiver pronto/carregado
                 $("#campoSenha").val("");
             } else {
                 // informar mensagem de erro
-                alert("ERRO na inclusão: "+retorno.resultado + ":" + retorno.detalhes);
+                alert("Erro no cadastro, por favor contate o administrador " + retorno.resultado + ":" + retorno.detalhes);
             }            
         }
         function erroAoIncluir (retorno) {
@@ -47,7 +47,7 @@ $(function() { // quando o documento estiver pronto/carregado
         //recebe os dados da tela
         email = $("#campoEmail").val();
         senha = $("#campoSenha").val();
-        console.log(email, senha); //mostra no console
+        //console.log(email, senha); 
 
         var dados = JSON.stringify({ email: email, senha: senha });//compila os dados todos juntos em json
         $.ajax({
@@ -55,13 +55,12 @@ $(function() { // quando o documento estiver pronto/carregado
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados
-            data: dados, // estes são os dados enviados
-            success: loginFeito, // chama a função listar para processar o resultado
+            data: dados, 
+            success: loginFeito, 
             error: erroaoLogar
         });
         function loginFeito (retorno) {
             if (retorno.resultado == "ok") { // a operação deu certo?
-                // informar resultado de sucesso
                 alert("Login realizado com sucesso!");
                 // limpar os campos
                 $("#campoEmail").val("");
@@ -73,7 +72,7 @@ $(function() { // quando o documento estiver pronto/carregado
         }
         function erroaoLogar (retorno) {
             // informar mensagem de erro
-            alert("ERRO ao contactar back-end: "+retorno.resultado + ":" + retorno.detalhes);
+            alert("ERRO ao contactar back-end: " + retorno.resultado + ":" + retorno.detalhes);
         }
     });
 });

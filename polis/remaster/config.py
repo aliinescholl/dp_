@@ -1,9 +1,7 @@
-from flask import Flask, jsonify, request, session
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask import *
-
 from flask_cors import CORS # permitir back receber json do front
 
 # configurações
