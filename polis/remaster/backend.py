@@ -6,8 +6,7 @@ from modelo import Pessoa
 def inicio():
     return render_template('index.html')
 
-# teste_rota: curl -d '{"email":"josilva@gmail.com", "senha":"1234567"}' -X POST" localhost:5000/fazer_login
-
+#teste_rota: curl -d '{"email":"josilva@gmail.com", "senha":"1234567"}' -X POST" localhost:5000/fazer_login
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def incluir_pessoa():
