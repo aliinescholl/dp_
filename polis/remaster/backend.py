@@ -1,10 +1,5 @@
 from config import *
-from modelo import Pessoa
-from flask_session import *
-from flask_sqlalchemy import *
-from flask import *
-from flask_cors import *
-import os
+from modelo import *
 
 @app.route("/")
 def inicio():

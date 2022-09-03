@@ -1,8 +1,9 @@
-from flask_session import *
-from flask_sqlalchemy import *
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from flask import *
-from flask_cors import *
 import os
+from flask_session import *
 
 # configurações
 app = Flask(__name__)
