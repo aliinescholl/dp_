@@ -57,4 +57,30 @@ def inicio():
     if request.method == 'GET':
         return render_template('inicio.html')
 
+@app.route('/incluir_livro', methods = ['GET', 'POST'])
+def incluir_livro():
+    if request.method == 'GET':
+        return render_template ('cadastro_livro.html')
+
+@app.route("/save_image", methods=['POST'])
+def salvar_imagem():
+    try:
+        print("comecando")
+        file_val = request.files['foto']
+        print("vou salvar em: "+file_val.filename)
+        arquivoimg = os.path.join(caminho, 'imagens/'+file_val.filename)
+        file_val.save(arquivoimg)
+        r = jsonify({"resultado":"ok", "detalhes": file_val.filename})
+    except Exception as e:
+        r = jsonify({"resultado":"erro", "detalhes": str(e)})
+
+    r.headers.add("Access-Control-Allow-Origin", "*")
+    return r
+
+@app.route('/get_image/<int:id_pessoa>')
+def get_image(id_pessoa):
+    livro = db.session.query(Pessoa).get(id_pessoa)
+    arquivoimg = os.path.join(caminho, 'imagens/'+ livro.nome_foto)
+    return send_file(arquivoimg, mimetype='image/gif')
+       
 app.run(debug=True, host='0.0.0.0', port=5000)
