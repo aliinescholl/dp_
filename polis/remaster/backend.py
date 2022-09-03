@@ -1,11 +1,10 @@
+#from crypt import methods
 from config import *
 from modelo import *
 
 @app.route("/")
-def inicio():
+def home():
     return render_template('index.html')
-
-#teste_rota: curl -d '{"email":"josilva@gmail.com", "senha":"1234567"}' -X POST" localhost:5000/fazer_login
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def incluir_pessoa():
@@ -41,6 +40,21 @@ def login():
 
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta  # responder!
+#teste_rota: curl -d '{"email":"josilva@gmail.com", "senha":"1234567"}' -X POST" localhost:5000/fazer_login
 
+@app.route('/index', methods = ['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        return render_template('index.html')
+
+@app.route('/em_alta', methods = ['GET', 'POST'])
+def em_alta():
+    if request.method == 'GET':
+        return render_template ('em_alta.html')
+
+@app.route('/inicio', methods = ['GET', 'POST'])
+def inicio():
+    if request.method == 'GET':
+        return render_template('inicio.html')
 
 app.run(debug=True, host='0.0.0.0', port=5000)

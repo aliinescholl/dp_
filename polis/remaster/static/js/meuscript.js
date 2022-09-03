@@ -12,7 +12,7 @@ $(function() { // quando o documento estiver pronto/carregado
         var dados = JSON.stringify({ nome: nome, email: email, senha: senha });
         // fazer requisição para o back-end
         $.ajax({
-            url: 'http://localhost:5000/incluir_pessoa',
+            url: 'http://localhost:5000/cadastro',
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados

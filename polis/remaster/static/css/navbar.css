@@ -1,4 +1,9 @@
-.nav-item{
+.navbar-link{
+	display: block;
+    padding: 10px;
+    color: #cefffc;
+    text-decoration: none;
+    transition: color .15s ease-in-out;
 	border-radius: 5px;
 	font-weight: bolder;
 	margin: 5px;
@@ -6,13 +11,31 @@
 	width: 150px;
 }
 
-.nav-link:hover{
+.navbar-link:hover{
 	background-color: #cefffc;
 	color: black;
 	transition: 0.5s;
 	box-shadow: 0 0 20px #fff,0 0 20px #fff;
 }
-
+.btn-pesquisa{
+	background-color: #122437;
+	display: block;
+    padding: 10px;
+    color: #cefffc;
+    transition: color .15s ease-in-out;
+	border-radius: 5px;
+	font-weight: bolder;
+	margin: 5px;
+	text-align: center;	
+	width: 150px;
+	border-width: 0;
+}
+.btn-pesquisa:hover{
+	background-color: #cefffc;
+	color: #122437;
+	transition: 0.5s;
+	box-shadow: 0 0 20px #fff,0 0 20px #fff;
+}
 .navbar{
 	background-color: #122437;
 }
