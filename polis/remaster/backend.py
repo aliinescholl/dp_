@@ -1,6 +1,10 @@
 from config import *
 from modelo import Pessoa
-
+from flask_session import *
+from flask_sqlalchemy import *
+from flask import *
+from flask_cors import *
+import os
 
 @app.route("/")
 def inicio():
@@ -16,7 +20,7 @@ def incluir_pessoa():
         # preparar uma resposta otimista
         resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
         # receber as informações da nova pessoa
-        dados = request.get_json()  # (force=True) dispensa Content-Type na requisição
+        dados = request.get_json(force = True)  # (force=True) dispensa Content-Type na requisição
         try:  
             nova = Pessoa(**dados)  # criar a nova pessoa
             db.session.add(nova)  # adicionar no BD

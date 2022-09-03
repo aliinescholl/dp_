@@ -1,0 +1,5 @@
+import os
+pip install flask_session
+pip install flask
+pip install flask_cors
+pip install flask_sqlalchemy

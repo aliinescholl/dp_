@@ -1,8 +1,8 @@
-from flask_session import Session
-from flask_sqlalchemy import SQLAlchemy
-import os
+from flask_session import *
+from flask_sqlalchemy import *
 from flask import *
-from flask_cors import CORS # permitir back receber json do front
+from flask_cors import *
+import os
 
 # configurações
 app = Flask(__name__)
