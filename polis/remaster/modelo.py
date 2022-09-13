@@ -1,6 +1,6 @@
 from config import *
 
-class Pessoa(db.Model):# atributos da pessoa
+class Pessoa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254))
     email = db.Column(db.String(254))
@@ -16,7 +16,7 @@ class Pessoa(db.Model):# atributos da pessoa
             "nome": self.nome,
             "email": self.email,
             "senha": self.senha
-        } # expressao da classe no formato json
+        } 
 
 def pegar_email_no_bd(email_bd:str):
     return Pessoa.query.get(email_bd)

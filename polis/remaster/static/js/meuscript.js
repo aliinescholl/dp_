@@ -37,7 +37,6 @@ $(function() {
 });
 $(function() {
     $(document).on("click", "#btnFazerLogin", function() {
-        //recebe os dados da tela
         email = $("#campoEmail").val();
         senha = $("#campoSenha").val();
 
@@ -67,12 +66,12 @@ $(function() {
 });
 
 
-
+/*
 $(function () {
 
     $(document).on("click", "#btIncluirLivro", function () {
         var dados_foto = new FormData($('#formLivro')[0]);
-        console.log('chegou aqui')
+
         $.ajax({
             url: 'http://localhost:5000/save_image',
             method: 'POST',
@@ -101,9 +100,7 @@ $(function () {
             // só conta a contrabarra uma vez, inicia do zero
             capa_livro = $("#FotoCapaLivro").val().substr(12);
 
-            // preparar dados no formato json
             var dados = JSON.stringify({ titulo: titulo, autor: autor, resumo: resumo, capa_livro: capa_livro });
-            // fazer requisição para o back-end
             $.ajax({
                 url: 'http://localhost:5000/save_image',
                 method: 'POST',
@@ -118,17 +115,18 @@ $(function () {
                     $("#CampoTitulo").val();
                     $("#CampoAutor").val();
                     $("#CampoResumo").val();
+                    $("#FotoCapaLivro").val();
 
                 } else {
                     // informar mensagem de erro
                     alert(retorno.resultado + ":" + retorno.detalhes);
                 }
             }
+            console.log(dados)
             function erroAoIncluirLivro(retorno) {
-                // informar mensagem de erro
                 alert("ERRO: " + retorno.resultado + ":" + retorno.detalhes);
             }
         }
 
     });
-});
+});*/

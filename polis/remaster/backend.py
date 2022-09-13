@@ -11,20 +11,16 @@ def incluir_pessoa():
     if request.method == 'GET':
         return render_template("cadastro.html")
     else:
-        # preparar uma resposta otimista
-        resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
-        # receber as informações da nova pessoa
+        resposta = jsonify({"resultado": "ok", "detalhes": "oi"})     
         dados = request.get_json(force = True)  # (force=True) dispensa Content-Type na requisição
         try:  
-            nova = Pessoa(**dados)  # criar a nova pessoa
-            db.session.add(nova)  # adicionar no BD
-            db.session.commit()  # efetivar a operação de gravação
+            nova = Pessoa(**dados) 
+            db.session.add(nova) 
+            db.session.commit()  
         except Exception as e:  # em caso de erro...
-            # informar mensagem de erro
             resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
-        # adicionar cabeçalho de liberação de origem
         resposta.headers.add("Access-Control-Allow-Origin", "*")
-        return resposta  # responder!
+        return resposta 
 
 @app.route('/fazer_login', methods=['GET', 'POST'])
 def login():
@@ -39,7 +35,7 @@ def login():
         resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
 
     resposta.headers.add("Access-Control-Allow-Origin", "*")
-    return resposta  # responder!
+    return resposta 
 #teste_rota: curl -d '{"email":"josilva@gmail.com", "senha":"1234567"}' -X POST" localhost:5000/fazer_login
 
 @app.route('/index', methods = ['GET', 'POST'])
@@ -61,14 +57,13 @@ def inicio():
 def incluir_livro():
     if request.method == 'GET':
         return render_template ('cadastro_livro.html')
-
-@app.route("/save_image", methods=['POST'])
 def salvar_imagem():
     try:
         print("comecando")
         file_val = request.files['foto']
         print("vou salvar em: "+file_val.filename)
-        arquivoimg = os.path.join(caminho, 'imagens/'+file_val.filename)
+        print(path)
+        arquivoimg = os.path.join(path, 'imagens/'+file_val.filename)
         file_val.save(arquivoimg)
         r = jsonify({"resultado":"ok", "detalhes": file_val.filename})
     except Exception as e:
@@ -77,8 +72,10 @@ def salvar_imagem():
     r.headers.add("Access-Control-Allow-Origin", "*")
     return r
 
-@app.route('/get_image/<int:id_pessoa>')
-def get_image(id_pessoa):
+'''@app.route("/save_image", methods=['POST'])'''
+
+@app.route('/get_image/<int:id>')
+def get_image(id):
     livro = db.session.query(Pessoa).get(id_pessoa)
     arquivoimg = os.path.join(caminho, 'imagens/'+ livro.nome_foto)
     return send_file(arquivoimg, mimetype='image/gif')
