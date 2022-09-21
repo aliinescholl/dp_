@@ -66,7 +66,6 @@ $(function() {
 });
 
 
-/*
 $(function () {
 
     $(document).on("click", "#btIncluirLivro", function () {
@@ -129,4 +128,4 @@ $(function () {
         }
 
     });
-});*/
+});
